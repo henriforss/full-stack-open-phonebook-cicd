@@ -9,14 +9,16 @@ const url = process.env.MONGODB_URI;
 /* Connect to database */
 console.log("Connecting to", url);
 
-mongoose
-  .connect(url)
-  .then((result) => {
-    console.log("Connected to DB.");
-  })
-  .catch((error) => {
-    console.log("Error connecting to DB", error.message);
-  });
+const connectToMongo = async () => {
+  try {
+    await mongoose.connect(url);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to DB", error.message);
+  }
+};
+
+connectToMongo();
 
 /* Create a schema */
 const personSchema = new mongoose.Schema({

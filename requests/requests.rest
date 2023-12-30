@@ -1,0 +1,49 @@
+// Get root
+GET http://localhost:3000
+
+###
+
+// Get all persons
+GET http://localhost:3000/api/persons
+
+###
+
+// Get info
+GET http://localhost:3000/info
+
+###
+
+// Get by id
+GET http://localhost:3000/api/persons/6257eb1c0476839042d93123
+
+###
+
+// Get by wrong id
+GET http://localhost:3000/api/persons/6257eb1c0476839042d93129
+
+###
+
+// Delete by id
+DELETE http://localhost:3000/api/persons/6257eb6a439e5ccc27e8fb33
+
+###
+
+// Add new person
+POST http://localhost:3000/api/persons
+Content-Type: application/json
+
+{
+    "name": "Billy",
+    "number": "12-123456"
+}
+
+###
+
+// Update person number
+PUT http://localhost:3000/api/persons/659036efc6fa90b208dfa107
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "number": "12-888888"
+}
