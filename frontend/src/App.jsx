@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* Import */
 import { useEffect, useState } from "react";
 import numberService from "./services/numberServices";
@@ -14,7 +13,7 @@ const Notification = (props) => {
 };
 
 /* Filter */
-const FilterForm = (props) => {
+const FilterForm = (props, moi) => {
   return (
     <form>
       <div>
@@ -141,7 +140,7 @@ const App = () => {
           updatePerson.number = oldNumber;
           setNotificationStyle("error");
           setNotificationMessage(
-            `Number must be format 12-123456 or 123-12345.`
+            "Number must be format 12-123456 or 123-12345."
           );
           setTimeout(() => {
             setNotificationMessage(null);

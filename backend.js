@@ -1,4 +1,4 @@
-/* Import dependencies*/
+/* Import dependencies */
 import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 /* Create middleware errorHandler, enable last in script, uses next() */
-const errorHandler = (error, request, response, next) => {
+const errorHandler = (error, _request, response, next) => {
   console.error(error.message);
   if (error.name === "CastError") {
     return response.status(400).send({ error: "Malformatted id." });
@@ -31,7 +31,7 @@ const errorHandler = (error, request, response, next) => {
 app.use(express.json());
 
 /* Enable middleware "morgan" for console logging */
-morgan.token("body", (request, response) => {
+morgan.token("body", (request, _response) => {
   const body = JSON.stringify(request.body);
   return body;
 });
@@ -44,21 +44,16 @@ app.use(
 app.use(cors());
 
 /* Enable middleware "static"  */
-app.use(express.static("frontend/build"));
-
-/* Just some route */
-app.get("/", (req, res) => {
-  res.send("moikka");
-});
+app.use(express.static("frontend/dist"));
 
 /* Get all persons */
-app.get("/api/persons", async (request, response) => {
+app.get("/api/persons", async (_request, response) => {
   const persons = await Person.find({});
   response.json(persons);
 });
 
 /* Get info  */
-app.get("/info", async (request, response) => {
+app.get("/info", async (_request, response) => {
   const number = await Person.countDocuments({});
   const date = new Date();
 
