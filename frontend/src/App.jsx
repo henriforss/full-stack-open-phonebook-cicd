@@ -1,4 +1,5 @@
 /* Import */
+import React from "react";
 import { useEffect, useState } from "react";
 import numberService from "./services/numberServices";
 import "./App.css";
@@ -13,7 +14,7 @@ const Notification = (props) => {
 };
 
 /* Filter */
-const FilterForm = (props, moi) => {
+const FilterForm = (props) => {
   return (
     <form>
       <div>

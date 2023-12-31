@@ -1,10 +1,11 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
     node: true,
   },
-  extends: ["eslint:recommended"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
+  plugins: ["react"],
   overrides: [
     {
       env: {
@@ -20,6 +21,11 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
     indent: ["error", 2],
     eqeqeq: "error",
@@ -31,5 +37,6 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "react/prop-types": 0,
   },
 };

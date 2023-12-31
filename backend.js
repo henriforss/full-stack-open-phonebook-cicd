@@ -44,7 +44,7 @@ app.use(
 app.use(cors());
 
 /* Enable middleware "static"  */
-app.use(express.static("frontend/dist"));
+app.use(express.static("dist"));
 
 /* Get all persons */
 app.get("/api/persons", async (_request, response) => {
