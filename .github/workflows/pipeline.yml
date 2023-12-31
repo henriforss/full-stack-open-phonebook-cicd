@@ -14,10 +14,10 @@ jobs:
         with:
           node-version: "16"
       - name: Install backend deps
-        run: pnpm install
+        run: npm install
       - name: Install frontend deps
         run: |
           cd frontend
-          pnpm install
+          npm install
       - name: Lint project
-        run: pnpm lint
+        run: npm lint
