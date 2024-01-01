@@ -97,5 +97,3 @@ jobs:
           text: Phonebook deploy failed
           description: User ${{ github.event.head_commit.author.username }} broke the build with ${{ github.event.head_commit.url }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK}}
-# notifications
-# health checks
