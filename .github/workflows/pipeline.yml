@@ -17,24 +17,24 @@ jobs:
         with:
           version: 8
       - name: Install backend deps
-        run: npm install
+        run: pnpm install
       - name: Install frontend deps
         run: |
           cd frontend
-          npm install
+          pnpm install
       - name: Lint project
-        run: npm run lint
+        run: pnpm lint
       - name: Build frontend
         run: |
           cd frontend
-          npm run build
+          pnpm build
       - name: Run vitest tests
         run: |
           cd frontend
-          npm run test
+          pnpm test
       - name: Run Cypress e2e tests
         uses: cypress-io/github-action@v5
         with:
-          command: npm run test:e2e
-          start: npm run start
+          command: pnpm test:e2e
+          start: pnpm start
           browser: chrome
