@@ -44,7 +44,12 @@ app.use(
 app.use(cors());
 
 /* Enable middleware "static"  */
-app.use(express.static("dist"));
+app.use(express.static("frontend/dist"));
+
+/* Health check */
+app.get("/health", (_request, response) => {
+  response.send("ok");
+});
 
 /* Get all persons */
 app.get("/api/persons", async (_request, response) => {

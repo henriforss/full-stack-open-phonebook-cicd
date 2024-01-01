@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test_pipeline:
+  test_project:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -42,7 +42,7 @@ jobs:
           browser: chrome
 
   tag_release:
-    needs: test_pipeline
+    needs: test_project
     runs-on: ubuntu-20.04
     permissions:
       contents: write
@@ -55,3 +55,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
+
+  deploy_project:
+    needs: test_project
+    runs-on: ubuntu-20.04
+    if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message), '#skip') }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Fly deploy
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "20.5.1"
+  },
   "name": "full-stack-open-phonebook-cicd",
   "version": "1.0.0",
   "description": "An app for Full Stack Open CI/CD episode.",
@@ -23,6 +26,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.0",
     "cypress": "^13.6.2",
     "eslint": "^8.56.0",
     "eslint-plugin-cypress": "^2.15.1",
