@@ -4,4 +4,4 @@
 
 Phonebook app. Frontend and backend. With CI/CD.
 
-Live at: https://full-stack-open-phonebook-cicd.fly.dev/
+Live at: https://full-stack-open-phonebook-cicd.fly.dev
