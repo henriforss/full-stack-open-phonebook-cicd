@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *" # uncomment this to activate schedule
+#  schedule:
+#    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *" # uncomment this to activate schedule
 
 jobs:
   health_check:
@@ -32,7 +32,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: info
-          text: Phonebook is healthy
+          text: "Scheduled health check: Phonebook is healthy"
           description: All is well with https://full-stack-open-phonebook-cicd.fly.dev
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK}}
 
@@ -45,6 +45,6 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: error
-          text: Phonebook is not healthy
+          text: "Scheduled health check: Phonebook is not healthy"
           description: Something is wrong with https://full-stack-open-phonebook-cicd.fly.dev
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK}}
