@@ -11,7 +11,7 @@ import Person from "./models/person.js";
 const app = express();
 
 /* Define port */
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 /* Create middleware errorHandler, enable last in script, uses next() */
 const errorHandler = (error, _request, response, next) => {
