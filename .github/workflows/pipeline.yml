@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - master
+      - main
     types: [opened, synchronize]
 
 jobs:
@@ -81,7 +81,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: info
-          text: Phonebook is healthy
+          text: Phonebook deploy succeeded
           description: All is well with https://full-stack-open-phonebook-cicd.fly.dev
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK}}
 
