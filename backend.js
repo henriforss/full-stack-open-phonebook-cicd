@@ -47,7 +47,7 @@ app.use(cors());
 app.use(express.static("frontend/dist"));
 
 /* Health check */
-app.get("/health", (_request, response, moi) => {
+app.get("/health", (_request, response) => {
   response.send("ok");
 });
 

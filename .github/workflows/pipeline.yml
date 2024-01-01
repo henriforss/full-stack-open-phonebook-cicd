@@ -90,7 +90,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1
         with:
           severity: error
-          text: Build failed
+          text: Phonebook deploy failed
           description: User ${{ github.event.head_commit.author.username }} broke the build with ${{ github.event.head_commit.url }}
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK}}
 # notifications
