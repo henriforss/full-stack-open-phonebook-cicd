@@ -1,6 +1,5 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect, test, vi } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import App from "../src/App";
 import axiosMock from "axios";
 import { act } from "react-dom/test-utils";

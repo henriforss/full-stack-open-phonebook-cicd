@@ -21,7 +21,16 @@ jobs:
           npm install
       - name: Lint project
         run: npm run lint
-      - name: Run tests
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+      - name: Run vitest tests
         run: |
           cd frontend
           npm run test
+      - name: Run Cypress e2e tests
+        uses: cypress-io/github-action@v5
+        with:
+          start: npm run start
+          browser: chrome

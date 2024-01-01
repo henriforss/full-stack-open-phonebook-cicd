@@ -8,7 +8,9 @@
     "dev": "nodemon backend.js",
     "start": "node backend.js",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "cypress": "cypress open",
+    "test:e2e": "cypress run"
   },
   "keywords": [],
   "author": "Henri Forss",
@@ -21,6 +23,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "cypress": "^13.6.2",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.33.2",
     "nodemon": "^3.0.2"

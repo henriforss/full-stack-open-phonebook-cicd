@@ -30,13 +30,21 @@ const AddPersonForm = (props) => {
   return (
     <form onSubmit={props.add}>
       <div>
-        name: <input value={props.name} onChange={props.namechange} />
+        name:{" "}
+        <input id="input-name" value={props.name} onChange={props.namechange} />
       </div>
       <div>
-        number: <input value={props.number} onChange={props.numberchange} />
+        number:{" "}
+        <input
+          id="input-number"
+          value={props.number}
+          onChange={props.numberchange}
+        />
       </div>
       <div>
-        <button type="submit">add</button>
+        <button id="input-submit" type="submit">
+          add
+        </button>
       </div>
     </form>
   );
