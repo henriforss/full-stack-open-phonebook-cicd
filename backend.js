@@ -47,9 +47,9 @@ app.use(cors());
 app.use(express.static("frontend/dist"));
 
 /* Health check */
-app.get("/health", (_request, _response) => {
-  throw new Error("not healthy");
-  // response.send("ok");
+app.get("/health", (_request, response) => {
+  // throw new Error("not healthy");
+  response.send("ok");
 });
 
 /* Get all persons */

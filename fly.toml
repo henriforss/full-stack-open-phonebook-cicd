@@ -31,6 +31,11 @@ primary_region = "arn"
   handlers = ["tls", "http"]
   port = 443
 
+[services.concurrency]
+  type = "connections"
+  hard_limit = 25
+  soft_limit = 20
+
 [[services.tcp_checks]]
   grace_period = "1s"
   interval = "15s"
