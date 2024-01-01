@@ -3,8 +3,13 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    "cypress/globals": true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:cypress/recommended",
+  ],
   plugins: ["react", "cypress"],
   overrides: [
     {
@@ -38,5 +43,6 @@ module.exports = {
     semi: ["error", "always"],
     "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "react/prop-types": 0,
+    "cypress/no-unnecessary-waiting": 0,
   },
 };
