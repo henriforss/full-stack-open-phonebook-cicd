@@ -39,7 +39,7 @@ COPY --link . .
 # COPY --link ./frontend ./frontend
 
 # Build frontend
-# RUN cd frontend && pnpm build
+RUN cd frontend && pnpm build
 
 # Remove development dependencies
 RUN pnpm prune 
