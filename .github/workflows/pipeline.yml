@@ -67,3 +67,18 @@ jobs:
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  notify_on_success:
+    needs: deploy_project
+    runs-on: ubuntu-20.04
+    if: success()
+    steps:
+      - name: Notify Discord if deploy successful
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: info
+          text: Phonebook is healthy
+          description: All is well with https://full-stack-open-phonebook-cicd.fly.dev
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK}}
+# notifications
+# health checks
